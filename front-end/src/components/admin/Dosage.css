@@ -1,0 +1,46 @@
+.dosage{
+    margin-top: 3%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.dosage table{
+    border-collapse: collapse;
+    width: 70%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.dosage .center {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dosage button{
+    color:white;
+    background-color: #15AAFF;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    
+    margin-bottom: 10px;
+}
+.dosage table thead tr th{
+    background-color: #15AAFF !important;
+    padding-top: 15px !important;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 15px !important;
+  }
+  .dosage table tbody tr td{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }

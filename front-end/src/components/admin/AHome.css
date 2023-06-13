@@ -1,0 +1,172 @@
+.ahome{
+    margin-top: 3%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.admin-buttons{
+    float: right;
+    margin-right: auto;
+}
+.admin-buttons button{
+    color:white;
+    background-color: #15AAFF;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.admin-buttons input{
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 16px;
+    border:1px solid gray;
+    
+    border-radius: 5px;
+    
+}
+.admin-buttons button a{
+    color: white;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: bold;
+}
+.ahome .list-table{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 5%;
+}
+.ahome table{
+    border-collapse: collapse;
+}
+.ahome table thead tr th{
+    background-color: #15AAFF !important;
+    padding-top: 15px !important;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 15px !important;
+  }
+  .ahome table tbody tr td{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .ahome .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .ahome .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  .remove-now{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+    background-color: red;
+    color: white;
+    font-family: "Open Sans",sans-serif;
+    font-weight: bold;
+  }
+  .edit-now{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+    margin-right: 4px;
+    background-color: #15AAFF;
+    color: white;
+    font-family: "Open Sans",sans-serif;
+    font-weight: bold;
+  }
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  .popup .mydivs{
+    margin-top: 30px;
+  }
+  .popup .mydivs input{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    border: 2px solid #B0B3B9;
+  }
+  .popup .mydivs input:focus{
+    border: 2px solid #15AAFF;
+  }
+  .popup h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+    font-family: "Open Sans",sans-serif;
+
+  }
+  .popup label{
+    font-size: small;
+    color: grey;
+    font-family:"Open Sans", sans-serif;
+    font-weight: bold;
+    float: left;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup button{
+    color:white;
+    background-color: #15AAFF;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 16px;
+    outline: none;
+    border: none;
+    border-radius: 45px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+    margin-bottom: 28px;
+    margin-top: 5px;
+  }
+  .popup .content1 {
+    max-height: 30%;
+    overflow: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }

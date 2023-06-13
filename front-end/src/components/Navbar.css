@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+.navbody *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    background-color: #15AAFF;
+}
+
+.navbody li,a,button{
+    font-family: "Open Sans",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color:#edf0f1;
+    text-decoration: none !important;
+}
+.navbody header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 17px 14px;
+}
+.navbody .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+.navbody .nav_links{
+    list-style: none;
+}
+.navbody .nav_links li{
+    display: inline-block;
+    padding: 0px 25px;
+    margin-right: 3px;
+}
+.navbody .nav_links li{
+    transition: all 0.3s ease 0s;
+}
+
+.navbody .nav_links li:hover{
+    color: #FFFFFF;
+    border-bottom: 3.5px solid #fff;
+}
+.navbody button{
+    padding: 9px 25px;
+    background-color: #FF0000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.navbody button:hover{
+    background-color: #a10000;
+}
