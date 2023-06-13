@@ -15,6 +15,7 @@ To run the front-end follow the steps given below:
 3. Copy and replace the index.js and the html files in your project
 4. Run the project using the command.
  npm run devStart
+
 To run the front-end follow the steps given below:
 
 1. Create a new React project using the following command
