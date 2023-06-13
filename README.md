@@ -10,19 +10,19 @@ It' technical stack are
 To run the front-end follow the steps given below:
 
 1. Create a new NodeJS project using the following command
-# npm init -y
+ npm init -y
 2. In that install the dependencies present in the package.json file using npm install command
 3. Copy and replace the index.js and the html files in your project
 4. Run the project using the command.
-# npm run devStart
+ npm run devStart
 To run the front-end follow the steps given below:
 
 1. Create a new React project using the following command
-# npx create-react-app app
+ npx create-react-app app
 2. In that install the dependencies present in the package.json file using npm install command
 3. Copy and replace the public and src folder in your project
 4. Run the project using the command.
-# npm start
+ npm start
 
 
 Note: 
