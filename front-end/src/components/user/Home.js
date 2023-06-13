@@ -120,7 +120,7 @@ class UHome extends Component {
                   const date=new Date();
                   const hour = date.getHours();
                   console.log(hour)
-                  if (data.slot_available > 0 && hour<16 && hour>14) {
+                  if (data.slot_available > 0 && hour<11 && hour>7) {
                     return (
                       <tr key={data.center_name}>
                         <td>{data.center_name}</td>
