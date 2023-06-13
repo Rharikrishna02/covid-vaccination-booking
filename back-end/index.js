@@ -24,7 +24,7 @@ var transporter = nodemailer.createTransport({
 });
 const now = new Date();
 const targetTime = new Date();
-targetTime.setHours(20, 13, 0);
+targetTime.setHours(8, 0, 0);
 
 const timeRemaining = targetTime - now;
 
