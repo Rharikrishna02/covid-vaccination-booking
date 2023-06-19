@@ -24,7 +24,7 @@ var transporter = nodemailer.createTransport({
 });
 const now = new Date();
 const targetTime = new Date();
-targetTime.setHours(8, 0, 0);
+targetTime.setHours(20, 13, 0);
 
 const timeRemaining = targetTime - now;
 
@@ -119,7 +119,7 @@ app.get("/ucentersee",(req,res)=>{
 app.post("/ubooking",(req,res)=>{
   const username=req.body.uname;
   console.log(username)
-  db.query("SELECT centre,slot,vaccine,booking_date,aadhar,bname,bage FROM ubookings WHERE username=?",[username],
+  db.query("SELECT centre,slot,vaccine,booking_date,aadhar,bname,bage,status FROM ubookings WHERE username=?",[username],
   (err, result)=> {
     console.log(result);
       if(err){
@@ -172,7 +172,7 @@ app.post("/ubookingins",(req,res)=>{
   if(slot===3) { slot1=8; vtime="5.00 PM to 5.30 PM"}
   if(slot===2) { slot1=9; vtime="6.00 PM to 6.30 PM"}
   if(slot===1) { slot1=10; vtime="7.00 PM to 7.30 PM"}
-  db.query("INSERT INTO ubookings VALUES(?,?,?,?,?,?,?,?)",[username,cname,slot1,vacc1[0],booking_date,aadhar,bname,bage],
+  db.query("INSERT INTO ubookings VALUES(?,?,?,?,?,?,?,?,1)",[username,cname,slot1,vacc1[0],booking_date,aadhar,bname,bage],
   (err, result)=> {
       if(err){
           res.send("no");        
@@ -239,7 +239,7 @@ app.post("/acenterins",(req,res)=>{
   const mobile=req.body.mobile;
   const dosage=req.body.dosage;
   const dosage1=req.body.dosage1;
-  db.query("INSERT INTO center_list VALUES(?,?,?,?,?,?,10)",[cname,location,currentDate,mobile,dosage,dosage1],
+  db.query("INSERT INTO center_list VALUES(?,?,?,?,?,?,10,1,1,1,1,1,1,1,1,1,1)",[cname,location,currentDate,mobile,dosage,dosage1],
   (err, result)=> {
     console.log(result);
       if(err){
@@ -272,17 +272,51 @@ app.get("/adosagesee",(req,res)=>{
 })
 app.post("/acenterdel",(req,res)=>{
   const cname=req.body.cname;
-  db.query("DELETE FROM center_list WHERE center_name=?",[cname],
-  (err, result)=> {
-    
-      if(err){
+  db.query("SELECT username FROM ubookings WHERE centre=?",[cname],
+  (err1, result1)=> {
+    if(err1){
+      res.send("no");
+      console.log(err1);
+    }
+    if(result1){
+      db.query("UPDATE ubookings SET status=0 WHERE centre=?",[cname],
+      (err2, result2)=> {
+        if(err2){
           res.send("no");
-          console.log(err)
-      }
-      if(result){
-        res.send('Yes');
-      }
-    });
+          console.log(err2);
+        }
+        if(result2){
+          for(var i=0;i<result1.length;i++){
+            const username=result1[i].username;
+          fs.readFile('./email1 (cancel).html', 'utf8', (err, data) => {
+            if (err) {
+              console.error('Error reading the file:', err);
+              return;
+            }
+            if(data!==""){
+              var mailOptions = { from: 'harikrishna.20it@sonatech.ac.in',to: username,subject: 'Vaccination Booking Cancellation',html: data }
+              transporter.sendMail(mailOptions, function(error, info){
+                if (error) {console.log(error);} 
+                else { 
+                  db.query("DELETE FROM center_list WHERE center_name=?",[cname],
+                  (err3, result3)=> {
+                    
+                      if(err3){
+                          res.send("no");
+                          console.log(err3)
+                      }
+                      if(result3){
+                        res.send('Yes');
+                      }
+                    });
+                 }
+              });
+            }
+          });}
+        }
+      })
+    }
+  })
 })
 app.listen(3001,function(){
 console.log("Server is running on port number 3001")

@@ -60,11 +60,14 @@ function UBookings() {
       </th>
       <th class="th-sm">Vaccine Name
       </th>
+      <th class="th-sm">Status
+      </th>
     </tr>
   </thead>
   <tbody>
     {
       vchecker&&bdata.map((data)=>{
+        if(data.status===1){
         return(
           <tr>   
             <td>{data.centre}</td>
@@ -74,8 +77,24 @@ function UBookings() {
             <td>{data.bname}</td>
             <td>{data.bage}</td>
             <td>{data.vaccine}</td>
+            <td style={{color:'green'}}>Booked</td>
           </tr>
-        );
+        );}
+        else{
+          return(
+            <tr>   
+              <td>{data.centre}</td>
+              <td>{data.slot}</td>
+              <td>{data.booking_date}</td>
+              <td>{data.aadhar}</td>
+              <td>{data.bname}</td>
+              <td>{data.bage}</td>
+              <td>{data.vaccine}</td>
+              <td style={{color:'red'}}>Cancelled</td>
+            </tr>
+          );
+
+        }
       })
     }
       
@@ -95,6 +114,8 @@ function UBookings() {
       <th>Benificiary Age
       </th>
       <th>Vaccine Name
+      </th>
+      <th>Status
       </th>
     </tr>
   </tfoot>
