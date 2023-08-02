@@ -19,7 +19,7 @@ const db= mysql.createPool({
 var transporter = nodemailer.createTransport({
     service: 'Outlook365',auth: {
     user: 'harikrishna.20it@sonatech.ac.in',
-    pass: 'Rhk$14082002'
+    pass: ''
     },tls : { rejectUnauthorized: false }
 });
 const now = new Date();
